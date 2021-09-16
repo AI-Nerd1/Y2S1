@@ -5,8 +5,8 @@ public class Labwork2
 	public static void main (String[] args)
     {
        Tribe2 t1 = new Tribe2();
-       Tribe2 t2 = new Tribe2("Arboriginals");
-       Tribe2 t3 = new Tribe2("Arboriginals", 75, 30);
+       Tribe2 t2 = new Tribe2("Чулым");
+       Tribe2 t3 = new Tribe2("Сибирский татарин", 75, 30);
        Tribe2 t4 = new Tribe2(t1);
        
        t1.toConsole();
