@@ -167,33 +167,88 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.pushButton.clicked.connect(self.result)
+        
 
+    def result(self):
+        index = 0
+        index7 = self.comboBox_7.currentIndex()
+        if index7 == 1:
+            index = index + 0
+        elif index7 == 2:
+            index = index - 10     
+        elif index7 ==3:
+            index = index - 20
+                
+        index8 = self.comboBox_8.currentIndex()
+        if index8 == 1:
+            index = index + 0
+        elif index8 == 2:
+            index = index - 10     
+        elif index8 ==3:
+            index = index - 20
+
+        index9 = self.comboBox_9.currentIndex()
+        if index9 == 1:
+            index = index + 0
+        elif index9 == 2:
+            index = index - 10     
+        elif index9 ==3:
+            index = index - 20
+                
+        index10 = self.comboBox_10.currentIndex()
+        if index10 == 1:
+            index = index + 0
+        elif index10 == 2:
+            index = index - 10     
+        elif index10 ==3:
+            index = index - 20
+        
+        index11 = self.comboBox_11.currentIndex()
+        if index11 == 1:
+            index = index + 0
+        elif index11 == 2:
+            index = index - 10     
+        elif index11 ==3:
+            index = index - 20
+        
+        
+        self.label_3.setText(str(index) + "%")
+    
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Evaluator"))
         self.pushButton.setText(_translate("Form", "RUN"))
         self.label.setText(_translate("Form", "Результат вычисления"))
         self.label_2.setText(_translate("Form", "Вывод по ресурсу:"))
-        self.label_3.setText(_translate("Form", "0%"))
+        value = self.comboBox_7.currentText()
+        self.label_3.setText(_translate("Form","0%"))
+        # self.label_3.setText(self.label_3.setText() + 'output' + "%")
+
         self.label_11.setText(_translate("Form", "<html><head/><body><p align=\"justify\"><span style=\" font-family:\'Liberation Serif,serif\'; font-weight:600; color:#ffffff;\">Наличие ненужной информации</span></p></body></html>"))
         self.label_9.setText(_translate("Form", "<html><head/><body><p align=\"justify\"><span style=\" font-family:\'Liberation Serif,serif\'; font-weight:600; color:#ffffff;\">Наличие гарантии</span></p></body></html>"))
         self.label_10.setText(_translate("Form", "<html><head/><body><p align=\"justify\"><span style=\" font-family:\'Liberation Serif,serif\'; font-weight:600; color:#ffffff;\">Приемлемость модификации</span></p></body></html>"))
+        
         self.comboBox_7.setItemText(0, _translate("Form", "Выберите"))
         self.comboBox_7.setItemText(1, _translate("Form", "Удобный интерфейс"))
         self.comboBox_7.setItemText(2, _translate("Form", "Неадаптированный интерфейс"))
         self.comboBox_7.setItemText(3, _translate("Form", "Сложный интерфейс"))
+        
         self.comboBox_10.setItemText(0, _translate("Form", "Выберите"))
         self.comboBox_10.setItemText(1, _translate("Form", "Нет ненужной информации"))
         self.comboBox_10.setItemText(2, _translate("Form", "Небольшое количество "))
         self.comboBox_10.setItemText(3, _translate("Form", "Неадаптированная информация"))
+      
         self.comboBox_8.setItemText(0, _translate("Form", "Выберите"))
         self.comboBox_8.setItemText(1, _translate("Form", "Администрируется"))
         self.comboBox_8.setItemText(2, _translate("Form", "Не часто вводится"))
         self.comboBox_8.setItemText(3, _translate("Form", "Крайне редко администрируется"))
+      
         self.comboBox_11.setItemText(0, _translate("Form", "Выберите"))
         self.comboBox_11.setItemText(1, _translate("Form", "Без гарантии"))
         self.comboBox_11.setItemText(2, _translate("Form", "Не детализированный"))
         self.comboBox_11.setItemText(3, _translate("Form", "Гарантия с полным описанием"))
+      
         self.comboBox_9.setItemText(0, _translate("Form", "Выберите"))
         self.comboBox_9.setItemText(1, _translate("Form", "Идеально выполненный"))
         self.comboBox_9.setItemText(2, _translate("Form", "Приемлемый"))
