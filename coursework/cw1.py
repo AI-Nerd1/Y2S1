@@ -12,7 +12,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from cw2 import Ui_Form
-
+out = 0
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -39,6 +39,7 @@ class Ui_MainWindow(object):
         self.label_7.setScaledContents(True)
         self.label_7.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.label_7.setObjectName("label_7")
+
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(570, 490, 141, 29))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
@@ -232,14 +233,71 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        self.pushButton.clicked.connect(self.secondscr)
+        self.pushButton.clicked.connect(self.secondscr)   
+       
 
     def secondscr(self):
+        # out = 0
+        index1 = self.comboBox.currentIndex()
+        if index1 == 1:
+            out= out+ 16
+        elif index1 == 2:
+            out= out+ 8 
+        elif index1 ==3:
+            out= out+ 0
+                
+        index2 = self.comboBox_2.currentIndex()
+        if index2 == 1:
+            out= out+ 16
+        elif index2 == 2:
+            out= out+ 8  
+        elif index2 ==3:
+            out= out+ 0
+
+        index3 = self.comboBox_3.currentIndex()
+        if index3 == 1:
+            out= out+ 16
+        elif index3 == 2:
+            out= out+ 8  
+        elif index3 ==3:
+            out= out+ 0
+                
+        index4 = self.comboBox_4.currentIndex()
+        if index4 == 1:
+            out= out+ 16
+        elif index4 == 2:
+            out= out+ 8    
+        elif index4 ==3:
+            out= out+ 0
+        
+        index5 = self.comboBox_5.currentIndex()
+        if index5 == 1:
+            out= out+ 16
+        elif index5 == 2:
+            out= out+ 8  
+        elif index5 ==3:
+            out= out + 0
+
+        index6 = self.comboBox_6.currentIndex()
+        if index6 == 1:
+            out= out+ 0
+        elif index6 == 2:
+            out= out+ 7    
+        elif index6 ==3:
+            out= out+ 14   
+        elif index6 == 4 :
+            out= out+ 20
+
+        
+        
+        self.pushButton.setText(str(out))
+        
         self.Form = QtWidgets.QWidget()
         self.ui = Ui_Form()
         self.ui.setupUi(self.Form)
         self.Form.show()
-
+    
+   
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Evaluator"))
@@ -248,31 +306,39 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "<html><head/><body><p align=\"justify\"><span style=\" font-family:\'Liberation Serif,serif\'; font-weight:600; color:#ffffff;\">Реализация удаленного доступа</span></p></body></html>"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p align=\"justify\"><span style=\" font-family:\'Liberation Serif,serif\'; font-weight:600; color:#ffffff;\">Обратная связь</span></p></body></html>"))
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p align=\"justify\"><span style=\" font-family:\'Liberation Serif,serif\'; font-weight:600; color:#ffffff;\">Качества поддержки</span></p></body></html>"))
+        
         self.comboBox.setItemText(0, _translate("MainWindow", "Выберите"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Обширный"))
         self.comboBox.setItemText(2, _translate("MainWindow", "Полный"))
         self.comboBox.setItemText(3, _translate("MainWindow", "Неполный"))
+        #self.comboBox.addItem("7")
+
         self.comboBox_2.setItemText(0, _translate("MainWindow", "Выберите"))
         self.comboBox_2.setItemText(1, _translate("MainWindow", "Надежная"))
         self.comboBox_2.setItemText(2, _translate("MainWindow", "Частичная"))
         self.comboBox_2.setItemText(3, _translate("MainWindow", "Отсутствие"))
+
         self.comboBox_3.setItemText(0, _translate("MainWindow", "Выберите"))
         self.comboBox_3.setItemText(1, _translate("MainWindow", "Строго регламентированный"))
         self.comboBox_3.setItemText(2, _translate("MainWindow", "Чувствительный"))
         self.comboBox_3.setItemText(3, _translate("MainWindow", "Базовый уровень"))
+
         self.comboBox_4.setItemText(0, _translate("MainWindow", "Выберите"))
         self.comboBox_4.setItemText(1, _translate("MainWindow", "Немедленный доступ"))
         self.comboBox_4.setItemText(2, _translate("MainWindow", "Доступ к конечной точке"))
         self.comboBox_4.setItemText(3, _translate("MainWindow", "Неэффективный доступ"))
+
         self.comboBox_5.setItemText(0, _translate("MainWindow", "Выберите"))
         self.comboBox_5.setItemText(1, _translate("MainWindow", "Реальные отзывы"))
         self.comboBox_5.setItemText(2, _translate("MainWindow", "Сомнительная система"))
         self.comboBox_5.setItemText(3, _translate("MainWindow", "Нет отзывов"))
+
         self.comboBox_6.setItemText(0, _translate("MainWindow", "Выберите"))
         self.comboBox_6.setItemText(1, _translate("MainWindow", "Нет поддержки"))
         self.comboBox_6.setItemText(2, _translate("MainWindow", "Реализация одного варианта"))
         self.comboBox_6.setItemText(3, _translate("MainWindow", "Реализация двух вариантов"))
         self.comboBox_6.setItemText(4, _translate("MainWindow", "Многовариантная реализация"))
+
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuOpen.setTitle(_translate("MainWindow", "Open"))
         self.menuEdit.setTitle(_translate("MainWindow", "Edit"))
