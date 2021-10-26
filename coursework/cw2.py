@@ -11,7 +11,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -170,50 +169,50 @@ class Ui_Form(object):
         self.pushButton.clicked.connect(self.result)
         
 
-    def result(self):
-        index = 0
+    def result(self, out):
         index7 = self.comboBox_7.currentIndex()
         if index7 == 1:
-            index = index + 0
+            out = out + 0
         elif index7 == 2:
-            index = index - 10     
+            out = out - 10     
         elif index7 ==3:
-            index = index - 20
+            out = out - 20
                 
         index8 = self.comboBox_8.currentIndex()
         if index8 == 1:
-            index = index + 0
+            out= out+ 0
         elif index8 == 2:
-            index = index - 10     
+            out= out- 10     
         elif index8 ==3:
-            index = index - 20
+            out= out- 20
 
         index9 = self.comboBox_9.currentIndex()
         if index9 == 1:
-            index = index + 0
+            out= out+ 0
         elif index9 == 2:
-            index = index - 10     
+            out= out- 10     
         elif index9 ==3:
-            index = index - 20
+            out= out- 20
                 
         index10 = self.comboBox_10.currentIndex()
         if index10 == 1:
-            index = index + 0
+            out= out+ 0
         elif index10 == 2:
-            index = index - 10     
+            out= out- 10     
         elif index10 ==3:
-            index = index - 20
+            out= out- 20
         
         index11 = self.comboBox_11.currentIndex()
         if index11 == 1:
-            index = index + 0
+            out= out+ 0
         elif index11 == 2:
-            index = index - 10     
+            out= out- 10     
         elif index11 ==3:
-            index = index - 20
+            out= out- 20
         
         
-        self.label_3.setText(str(index) + "%")
+        self.label_3.setText(str(out) + "%")
+       
     
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
